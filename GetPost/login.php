@@ -99,6 +99,10 @@
 </head>
 
 <body>
+<?php
+if(!isset($_GET[''])){
+?>
+
     <div class="container">
         <h1>網頁傳值練習</h1>
         <h2>登入檢查</h2>
@@ -121,6 +125,10 @@
         </form>
         <a href="../index.php">⬅ 返回首頁</a>
     </div>
+
+    <?php
+}
+?>
 
 </body>
 
