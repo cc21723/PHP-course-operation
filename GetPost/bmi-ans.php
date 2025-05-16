@@ -104,7 +104,7 @@
             echo "<p>請輸入身高與體重來計算 BMI！</p>";
         }
         ?>
-
+        <a href="bmi-input.php">⬅ 返回上一頁</a>
         <a href="../index.php">⬅ 返回首頁</a>
     </div>
 </body>
