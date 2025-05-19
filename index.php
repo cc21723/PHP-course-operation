@@ -82,9 +82,10 @@
     <div class="container">
         <ul>
             <li><a href="./GetPost/bmi-input.php">傳值</a></li>
-            <li><a href="./GetPost/login.php">登入畫面</a></li>
+            <li><a href="./GetPost/login.php">登入檢查</a></li>
             <li><a href="./GetPost/calendar.php">萬年曆</a></li>
             <li><a href="./GetPost/calendar2.php">萬年曆2</a></li>
+            <li><a href="./session/login.php">會員登入</a></li>
         </ul>
     </div>
 </body>
