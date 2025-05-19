@@ -21,6 +21,17 @@
             text-align: center;
         }
 
+        .a-style{
+            text-decoration: none;
+            color: #a55a78;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .a-style:hover{
+            color: #f78fb3;
+        }
+
         .overlay {
             background-color: rgba(255, 255, 255, 0.6);
             min-height: 100vh;
@@ -211,6 +222,8 @@
             }
             ?>
         </div>
+
+        <a class="a-style" href="../index.php">⬅ 返回首頁</a>
     </div>
 </body>
 

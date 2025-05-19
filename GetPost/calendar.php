@@ -34,6 +34,17 @@
             text-align: left;
         }
 
+        a{
+            text-decoration: none;
+            color: #a55a78;
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+        a:hover{
+            color: #f78fb3;
+        }
+
         /* 標題區 */
         h1 {
             color: #E16B8C;
@@ -275,7 +286,7 @@
                 "todo" => $todo
             ];
         }
- 
+
         //建立日曆外框及星期標題列
         echo "<div class='box-container'>";
         echo "<div class='th-box'>日</div>";
@@ -330,7 +341,7 @@
         }
 
         ?>
-        
+
         <!-- 製作按鈕 上一個月下一個月 -->
         <div class="month-nav">
             <!-- href = "?" 在當前頁 -->
@@ -339,7 +350,7 @@
             <a href="?year=<?= $nextYear; ?>&month=<?= $nextMonth; ?>">下一個月 ➡</a>
         </div>
 
-
+        <a href="../index.php">⬅ 返回首頁</a>
     </div>
 </body>
 

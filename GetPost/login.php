@@ -25,6 +25,15 @@
             border: 3px dashed #f8a5c2;
             text-align: left;
         }
+        a{
+            text-decoration: none;
+            color: #a55a78;
+            display: block;
+            margin-top: 20px;
+        }
+        a:hover{
+            color: #f78fb3;
+        }
 
         h1 {
             font-family: 'Cute Font', cursive;
