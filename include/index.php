@@ -39,15 +39,12 @@ $page = $_GET['page'] ?? 'main';
     <!-- header -->
     <?php
     include_once "layout/header.php"; //include_once只要載入一次
-    ?>
 
-    <!-- nav start -->
-    <?php
     // require找不到檔案就不會執行下方程式
     // require "nav111.php";
     
     // include 找不到檔案也會繼續執行
-    include "layout/nav.php";
+    // include "layout/header111.php";
     ?>
 
 
