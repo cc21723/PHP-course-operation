@@ -86,6 +86,7 @@
             <li><a href="./GetPost/calendar.php">萬年曆</a></li>
             <li><a href="./GetPost/calendar2.php">萬年曆2</a></li>
             <li><a href="./session/login.php">會員登入</a></li>
+            <li><a href="./include/index.php">學生管理系統</a></li>
         </ul>
     </div>
 </body>
