@@ -1,93 +1,116 @@
+<?php
+$page = $_GET['page'] ?? 'main';
+?>
 <!DOCTYPE html>
 <html lang="zh-Hant">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>學生管理系統</title>
+    <title>學生管理系統
+        <?php
+        switch ($page) {
+            case 'student_list':
+                echo " - 學生列表";
+                break;
+            case 'student_add':
+                echo " - 新增學生";
+                break;
+            case 'student_query':
+                echo " - 學生查詢";
+                break;
+            case 'about':
+                echo " - 關於";
+                break;
+            default:
+                echo " - 首頁";
+        }
+        ?>
+    </title>
+
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(to bottom right, #fef6f9, #e3f4f3);
-            color: #5c4b51;
-            margin: 0;
-            padding: 0;
-        }
 
-        header {
-            background-color: #e6c1d3;
-            padding: 1rem;
-            text-align: center;
-            border-bottom: 4px dashed #a87b9b;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            background-color: #f2d7e6;
-        }
-
-        nav li {
-            margin: 0 1rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #7b4f63;
-            font-weight: bold;
-            padding: 0.5rem;
-            transition: background-color 0.3s ease;
-        }
-
-        nav a:hover {
-            background-color: #fff0f7;
-            border-radius: 10px;
-        }
-
-        main {
-            padding: 2rem;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.7);
-            margin: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(174, 134, 152, 0.2);
-        }
-
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #e6c1d3;
-            border-top: 4px dashed #a87b9b;
-            margin-top: 2rem;
-        }
     </style>
 </head>
+
 <body>
-<header>
-    <h1>🌸 學生管理系統 🌿</h1>
-</header>
-<nav>
-    <ul>
-        <li><a href="index.php">首頁</a></li>
-        <li><a href="student_list.php">學生列表</a></li>
-        <li><a href="student_add.php">新增學生</a></li>
-        <li><a href="about.php">關於</a></li>
-    </ul>
-</nav>
-<main>
-    <h2>歡迎來到學生管理系統</h2>
-    <p>請從上方選單選擇功能</p>
-</main>
-<footer>
-    <p>&copy; <?php echo date('Y')?> 學生管理系統</p>
-</footer>
+    <!-- header -->
+    <?php
+    include_once "layout/header.php"; //include_once只要載入一次
+    ?>
+
+    <!-- nav start -->
+    <?php
+    // require找不到檔案就不會執行下方程式
+    // require "nav111.php";
+    
+    // include 找不到檔案也會繼續執行
+    include "layout/nav.php";
+    ?>
+
+
+    <!-- main start -->
+    <?php
+    // include "main.php";
+    
+    // 方法1
+    // 取得網址上的參數值（GET 參數），如果沒有就給預設值main
+    // $page=isset($_GET['page']) ? $_GET['page'] : 'main'; //同等於 $_GET['page'] ?? 'main';
+    
+    // ?? 是「Null 合併運算子」 
+    // 只能用在isset的情況 要true的值 = isset($_GET['page']) 裡面的$_GET['page']才能使用
+    // $page = $_GET['page'] ?? 'main'; //移至最上方
+    
+    // switch($page){
+    //     case 'student_list':
+    //         include "main/student_list.php";
+    //         break;
+    //     case 'student_add':
+    //         include "main/student_add.php";
+    //         break;
+    //     case 'student_query':
+    //         include "main/student_query.php";
+    //         break;
+    //     case 'about':
+    //         include "main/about.php";
+    //         break;
+    //     default:
+    //         include "main/main.php";
+    // }
+    
+    $file = "main/" . $page . ".php";
+    if (file_exists($file)) {
+        include $file;
+    } else {
+        include "main/main.php";
+    }
+
+    // // 方法2
+    // //取得網址上的參數值（GET 參數），如果沒有就給預設值main
+    // $page = $_GET['page'] ?? 'main';
+    
+    // // 防止惡意輸入，限制只允許特定檔名
+    // $allowed_pages = ['main', 'student_add', 'student_list', 'student_query', 'about'];
+    
+    // // in_array($page, $allowed_pages)
+    // // 意思是：「檢查 $page 的值是不是有包含在 $allowed_pages 這個陣列裡」
+    // if (in_array($page, $allowed_pages)) {
+    //     include "main/{$page}.php";
+    // } else {
+    //     echo "<p>找不到頁面</p>";
+    // }
+    
+    ?>
+
+
+
+
+
+    <?php
+    include "layout/footer.php";
+    ?>
 </body>
+
 </html>
