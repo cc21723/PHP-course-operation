@@ -15,7 +15,8 @@
         body {
             margin: 0;
             font-family: 'Patrick Hand', cursive;
-            background: url('https://i.pinimg.com/736x/8b/5b/7b/8b5b7b5c564d5f933ffa4e19bdb49230.jpg') no-repeat center center fixed;
+            /* background: url('https://i.pinimg.com/736x/8b/5b/7b/8b5b7b5c564d5f933ffa4e19bdb49230.jpg') no-repeat center center fixed; */
+            background: url('https://picsum.photos/1024/768') no-repeat center center fixed;
             background-size: cover;
             color: #fff;
             text-align: center;
@@ -74,7 +75,10 @@
             grid-template-columns: repeat(7, 1fr);
             gap: 4px;
             max-width: 700px;
+            background:rgba(255, 255, 255, 0.75);
             margin: 0 auto;
+            padding: 20px;
+            border-radius: 5px;
         }
 
         .day-header,
